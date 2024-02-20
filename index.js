@@ -5,6 +5,8 @@ const path = require('path');
 const https = require('https');
 const sqlite3 = require('sqlite3');
 const API = require('./apiAuth');
+//trying to fix listener issue
+require('events').EventEmitter.prototype._maxListeners = 100;
 
 const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
